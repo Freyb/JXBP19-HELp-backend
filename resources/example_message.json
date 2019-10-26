@@ -1,0 +1,16 @@
+{
+    "tags": [
+                {
+                    "name": "SHOPPING",
+                    "pref": 1
+                },
+                {
+                    "name": "Finnish",
+                    "pref": 4
+                },
+                {
+                    "name": "Luxury",
+                    "pref": 2
+                }
+            ]
+}
