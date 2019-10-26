@@ -30,7 +30,7 @@ def do_the_job(message_data):
     max_lat = 60.19
     max_lon = 24.99
     
-    lats = np.arange(min_lat, max_lat, .002)
+    lats = np.arange(min_lat, max_lat, .001)
     lons = np.arange(min_lon, max_lon, .002)
     
     def lat_lon_distance(lat1, lon1, lat2, lon2):
