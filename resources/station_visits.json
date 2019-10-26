@@ -1,0 +1,108 @@
+{
+    "stations": [
+        {
+            "serial": "00000000fdda10fe",
+            "visitors": 674
+        },
+        {
+            "serial": "0000000038d83d41",
+            "visitors": 529
+        },
+        {
+            "serial": "000000006b44cce7",
+            "visitors": 3065
+        },
+        {
+            "serial": "0000000053c6c2be",
+            "visitors": 491
+        },
+        {
+            "serial": "00000000fb7600be",
+            "visitors": 797
+        },
+        {
+            "serial": "000000006b087f40",
+            "visitors": 1121
+        },
+        {
+            "serial": "0000000038bf9618",
+            "visitors": 439
+        },
+        {
+            "serial": "00000000342570c2",
+            "visitors": 234
+        },
+        {
+            "serial": "00000000aa852af1",
+            "visitors": 1100
+        },
+        {
+            "serial": "0000000006dd41f6",
+            "visitors": 268
+        },
+        {
+            "serial": "0000000019fb59c4",
+            "visitors": 235
+        },
+        {
+            "serial": "00000000b7334f91",
+            "visitors": 36
+        },
+        {
+            "serial": "00000000a53ed894",
+            "visitors": 248
+        },
+        {
+            "serial": "000000007b5207b6",
+            "visitors": 368
+        },
+        {
+            "serial": "00000000378bd7ea",
+            "visitors": 769
+        },
+        {
+            "serial": "000000004ef3150d",
+            "visitors": 419
+        },
+        {
+            "serial": "00000000afef4555",
+            "visitors": 1637
+        },
+        {
+            "serial": "00000000fffb8cf0",
+            "visitors": 310
+        },
+        {
+            "serial": "00000000675d5200",
+            "visitors": 437
+        },
+        {
+            "serial": "000000000f4919c9",
+            "visitors": 429
+        },
+        {
+            "serial": "00000000498c2a7d",
+            "visitors": 27
+        },
+        {
+            "serial": "00000000e8a064a4",
+            "visitors": 144
+        },
+        {
+            "serial": "00000000d350c7b2",
+            "visitors": 433
+        },
+        {
+            "serial": "00000000f1124bca",
+            "visitors": 214
+        },
+        {
+            "serial": "00000000d747f075",
+            "visitors": 221
+        },
+        {
+            "serial": "0000000096918cfa",
+            "visitors": 134
+        }
+    ]
+}
