@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import norm
 import json
-from math import sin, cos, sqrt, atan2, radians
+from math import sin, cos, sqrt, atan2, radians, exp
 
 
 def do_the_job(message_data):
