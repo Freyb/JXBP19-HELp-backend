@@ -66,6 +66,8 @@ def do_the_job(message_data):
             for j, chosen_lon in enumerate(lons):
                 heat_map[i, j] += value_of_location(chosen_lat, chosen_lon, location_by_tags[tag_name]) * parameters[tag_name]
     
+    heat_map = heat_map - np.min(heat_map)
+
     values_by_location_list = list()
     for i, lat in enumerate(lats):
         for j, lon in enumerate(lons):
