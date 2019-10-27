@@ -3,7 +3,6 @@ from scipy.stats import norm
 import json
 from math import sin, cos, sqrt, atan2, radians, exp, tanh
 
-
 def do_the_job(message_data):
     
     parameters = {}
@@ -44,24 +43,7 @@ def do_the_job(message_data):
     max_lon = 24.99
     
     lats = np.arange(min_lat, max_lat, .001)
-    lons = np.arange(min_lon, max_lon, .002)
-    
-    def lat_lon_distance(lat1, lon1, lat2, lon2):
-        R = 6373.0
-        
-        x1 = radians(lat1)
-        y1 = radians(lon1)
-        x2 = radians(lat2)
-        y2 = radians(lon2)
-        
-        dlon = y2 - y1
-        dlat = x2 - x1
-        
-        a = sin(dlat / 2)**2 + cos(x1) * cos(x2) * sin(dlon / 2)**2
-        c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        
-        return R * c
-    
+    lons = np.arange(min_lon, max_lon, .002)    
     
     def calculate_relevance_place_in_distance(dist):
         return exp(-(dist**2)/(2*(0.02)))/2.50662827
@@ -79,7 +61,7 @@ def do_the_job(message_data):
             dist = lat_lon_distance(chosen_lat, chosen_lon, station['latitude'], station['longitude'])
             if dist < min_dist:
                 min_dist = dist
-                ret = station['visitors_real_value']
+                ret = (station['visitors_normalized'] / 50)
         return ret
     
     heat_map = np.zeros(shape=(lats.shape[0], lons.shape[0]))
@@ -90,8 +72,8 @@ def do_the_job(message_data):
                 if tag_name == 'Visitors':
                     value = value_closest_station(chosen_lat, chosen_lon, station_visits_data)
                 else:
-                    value = value_of_location(chosen_lat, chosen_lon, location_by_tags[tag_name]) * parameters[tag_name]
-                heat_map[i, j] += value
+                    value = value_of_location(chosen_lat, chosen_lon, location_by_tags[tag_name])
+                heat_map[i, j] += (value * parameters[tag_name])
         
                 
         
@@ -111,3 +93,40 @@ def do_the_job(message_data):
          
     return values_by_location_list
 
+def lat_lon_distance(lat1, lon1, lat2, lon2):
+    R = 6373.0
+    
+    x1 = radians(lat1)
+    y1 = radians(lon1)
+    x2 = radians(lat2)
+    y2 = radians(lon2)
+    
+    dlon = y2 - y1
+    dlat = x2 - x1
+    
+    a = sin(dlat / 2)**2 + cos(x1) * cos(x2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    
+    return R * c
+
+def get_lists_section(list1, list2):
+    ret = list()
+    for elem in list1:
+        if elem["name"] in list2:
+            ret.append(elem["name"])
+
+    return ret
+
+def do_the_job_2(message_data):
+    with open('resources/places.json', encoding="utf-8") as json_file:
+        places_data = json.load(json_file)
+    
+    ret = list()
+    for place in places_data["data"]:
+        if lat_lon_distance(message_data["latitude"], message_data["longitude"],
+            place["location"]["lat"], place["location"]["lon"]) < 5 and len(get_lists_section(place["tags"], message["tags"])) > 0:
+            ret.append({"name" : place["name"]["en"], "id" : place["id"], "website" : place["info_url"]})
+
+    print(ret)
+    return ret
+    
