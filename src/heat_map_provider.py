@@ -37,13 +37,13 @@ def do_the_job(message_data):
         station_visits_data = json.load(json_file)
     
     
-    min_lat = 60.14
-    min_lon = 24.91
-    max_lat = 60.19
-    max_lon = 24.99
+    max_lat= 60.185437
+    min_lat = 60.141590
+    min_lon= 24.489979
+    max_lon= 25.202071
     
     lats = np.arange(min_lat, max_lat, .001)
-    lons = np.arange(min_lon, max_lon, .002)    
+    lons = np.arange(min_lon, max_lon, .002)
     
     def calculate_relevance_place_in_distance(dist):
         return exp(-(dist**2)/(2*(0.02)))/2.50662827
