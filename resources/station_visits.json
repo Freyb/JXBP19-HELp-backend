@@ -4,157 +4,183 @@
             "serial": "00000000fdda10fe",
             "latitude": 60.16531,
             "longitude": 24.9442,
-            "visitors": 674
+            "visitors_real_value": 674,
+            "visitor_normalized": 2.82865989653532
         },
         {
             "serial": "0000000038d83d41",
             "latitude": 60.16544,
             "longitude": 24.95398,
-            "visitors": 529
+            "visitors_real_value": 529,
+            "visitor_normalized": 2.7234556720351857
         },
         {
             "serial": "000000006b44cce7",
             "latitude": 60.16762,
             "longitude": 24.95415,
-            "visitors": 3065
+            "visitors_real_value": 3065,
+            "visitor_normalized": 3.486430478854434
         },
         {
             "serial": "0000000053c6c2be",
             "latitude": 60.16448,
             "longitude": 24.97323,
-            "visitors": 491
+            "visitors_real_value": 491,
+            "visitor_normalized": 2.6910814921229687
         },
         {
             "serial": "00000000fb7600be",
             "latitude": 60.16629,
             "longitude": 24.95957,
-            "visitors": 797
+            "visitors_real_value": 797,
+            "visitor_normalized": 2.9014583213961123
         },
         {
             "serial": "000000006b087f40",
             "latitude": 60.17002,
             "longitude": 24.94407,
-            "visitors": 1121
+            "visitors_real_value": 1121,
+            "visitor_normalized": 3.049605612594973
         },
         {
             "serial": "0000000038bf9618",
             "latitude": 60.1538,
             "longitude": 24.95595,
-            "visitors": 439
+            "visitors_real_value": 439,
+            "visitor_normalized": 2.6424645202421213
         },
         {
             "serial": "00000000342570c2",
             "latitude": 60.18203,
             "longitude": 24.91341,
-            "visitors": 234
+            "visitors_real_value": 234,
+            "visitor_normalized": 2.369215857410143
         },
         {
             "serial": "00000000aa852af1",
             "latitude": 60.16897,
             "longitude": 24.95222,
-            "visitors": 1100
+            "visitors_real_value": 1100,
+            "visitor_normalized": 3.041392685158225
         },
         {
             "serial": "0000000006dd41f6",
             "latitude": 60.14951,
             "longitude": 24.92138,
-            "visitors": 268
+            "visitors_real_value": 268,
+            "visitor_normalized": 2.428134794028789
         },
         {
             "serial": "0000000019fb59c4",
             "latitude": 60.15432,
             "longitude": 24.9211,
-            "visitors": 235
+            "visitors_real_value": 235,
+            "visitor_normalized": 2.3710678622717363
         },
         {
             "serial": "00000000b7334f91",
             "latitude": 60.537776,
             "longitude": 25.113236,
-            "visitors": 36
+            "visitors_real_value": 36,
+            "visitor_normalized": 1.5563025007672873
         },
         {
             "serial": "00000000a53ed894",
             "latitude": 60.14699,
             "longitude": 24.922,
-            "visitors": 248
+            "visitors_real_value": 248,
+            "visitor_normalized": 2.3944516808262164
         },
         {
             "serial": "000000007b5207b6",
             "latitude": 60.17919,
             "longitude": 24.95181,
-            "visitors": 368
+            "visitors_real_value": 368,
+            "visitor_normalized": 2.5658478186735176
         },
         {
             "serial": "00000000378bd7ea",
             "latitude": 60.474509,
             "longitude": 22.256625,
-            "visitors": 769
+            "visitors_real_value": 769,
+            "visitor_normalized": 2.885926339801431
         },
         {
             "serial": "000000004ef3150d",
             "latitude": 60.14947,
             "longitude": 24.91438,
-            "visitors": 419
+            "visitors_real_value": 419,
+            "visitor_normalized": 2.622214022966295
         },
         {
             "serial": "00000000afef4555",
             "latitude": 60.16829,
             "longitude": 24.94214,
-            "visitors": 1637
+            "visitors_real_value": 1637,
+            "visitor_normalized": 3.2140486794119414
         },
         {
             "serial": "00000000fffb8cf0",
             "latitude": 60.149,
             "longitude": 24.9843,
-            "visitors": 310
+            "visitors_real_value": 310,
+            "visitor_normalized": 2.4913616938342726
         },
         {
             "serial": "00000000675d5200",
             "latitude": 60.17918,
             "longitude": 24.95141,
-            "visitors": 437
+            "visitors_real_value": 437,
+            "visitor_normalized": 2.640481436970422
         },
         {
             "serial": "000000000f4919c9",
             "latitude": 60.17065,
             "longitude": 24.93641,
-            "visitors": 429
+            "visitors_real_value": 429,
+            "visitor_normalized": 2.6324572921847245
         },
         {
             "serial": "00000000498c2a7d",
             "latitude": 60.537785,
             "longitude": 25.113246,
-            "visitors": 27
+            "visitors_real_value": 27,
+            "visitor_normalized": 1.4313637641589874
         },
         {
             "serial": "00000000e8a064a4",
             "latitude": 60.15133,
             "longitude": 24.92329,
-            "visitors": 144
+            "visitors_real_value": 144,
+            "visitor_normalized": 2.1583624920952498
         },
         {
             "serial": "00000000d350c7b2",
             "latitude": 60.51086,
             "longitude": 22.274029,
-            "visitors": 433
+            "visitors_real_value": 433,
+            "visitor_normalized": 2.6364878963533656
         },
         {
             "serial": "00000000f1124bca",
             "latitude": 60.16075,
             "longitude": 24.95883,
-            "visitors": 214
+            "visitors_real_value": 214,
+            "visitor_normalized": 2.330413773349191
         },
         {
             "serial": "00000000d747f075",
             "latitude": 60.1638,
             "longitude": 24.96846,
-            "visitors": 221
+            "visitors_real_value": 221,
+            "visitor_normalized": 2.3443922736851106
         },
         {
             "serial": "0000000096918cfa",
             "latitude": 60.173,
             "longitude": 24.92524,
-            "visitors": 134
+            "visitors_real_value": 134,
+            "visitor_normalized": 2.1271047983648077
         }
     ]
 }
