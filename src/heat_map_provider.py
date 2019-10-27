@@ -124,7 +124,7 @@ def do_the_job_2(message_data):
     ret = list()
     for place in places_data["data"]:
         if lat_lon_distance(message_data["latitude"], message_data["longitude"],
-            place["location"]["lat"], place["location"]["lon"]) < 1.5 and len(get_lists_section(place["tags"], message_data["tags"])) > 0:
+            place["location"]["lat"], place["location"]["lon"]) < 0.5 and len(get_lists_section(place["tags"], message_data["tags"])) > 0:
             ret.append({"name" : place["name"]["en"], "id" : place["id"], "website" : place["info_url"]})
 
     print(ret)
