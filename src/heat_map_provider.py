@@ -1,14 +1,24 @@
 import numpy as np
 from scipy.stats import norm
 import json
-from math import sin, cos, sqrt, atan2, radians, exp
+from math import sin, cos, sqrt, atan2, radians, exp, tanh
 
 
 def do_the_job(message_data):
     
     parameters = {}
     for aspect in message_data['tags']:
-        parameters[aspect['name']] = (aspect['pref']-1.5)*2
+        print(aspect['pref'])
+        if aspect['pref'] == 0:
+            parameters[aspect['name']] = -3
+        elif aspect['pref'] == 1:
+            parameters[aspect['name']] = -1
+        elif aspect['pref'] == 2:
+            parameters[aspect['name']] = 1
+        elif aspect['pref'] == 3:
+            parameters[aspect['name']] = 3
+        else:
+            parameters[aspect['name']] = 0
         
     filter_tag = parameters.keys()
     
@@ -23,6 +33,9 @@ def do_the_job(message_data):
                 if tag['name'] in filter_tag:
                     location = (place['location']['lat'], place['location']['lon'])
                     location_by_tags[tag['name']].add(location)
+    
+    with open('resources/station_visits.json', encoding="utf8") as json_file:
+        station_visits_data = json.load(json_file)
     
     
     min_lat = 60.14
@@ -51,7 +64,7 @@ def do_the_job(message_data):
     
     
     def calculate_relevance_place_in_distance(dist):
-        return exp(-(dist**2)/(2*(0.1)))/2.50662827
+        return exp(-(dist**2)/(2*(0.02)))/2.50662827
     
     def value_of_location(chosen_lat, chosen_lon, locations):
         value = 0
@@ -59,12 +72,30 @@ def do_the_job(message_data):
             value += calculate_relevance_place_in_distance(lat_lon_distance(chosen_lat, chosen_lon, location[0], location[1]))
         return value
     
+    def value_closest_station(chosen_lat, chosen_lon, station_visits_data):
+        ret = 0
+        min_dist = lat_lon_distance(chosen_lat, chosen_lon, station_visits_data['stations'][0]['latitude'], station_visits_data['stations'][0]['longitude'])
+        for station in station_visits_data['stations']:
+            dist = lat_lon_distance(chosen_lat, chosen_lon, station['latitude'], station['longitude'])
+            if dist < min_dist:
+                min_dist = dist
+                ret = station['visitors_real_value']
+        return ret
+    
     heat_map = np.zeros(shape=(lats.shape[0], lons.shape[0]))
     
     for tag_name in location_by_tags:
         for i, chosen_lat in enumerate(lats):
             for j, chosen_lon in enumerate(lons):
-                heat_map[i, j] += value_of_location(chosen_lat, chosen_lon, location_by_tags[tag_name]) * parameters[tag_name]
+                if tag_name == 'Visitors':
+                    value = value_closest_station(chosen_lat, chosen_lon, station_visits_data)
+                else:
+                    value = value_of_location(chosen_lat, chosen_lon, location_by_tags[tag_name]) * parameters[tag_name]
+                heat_map[i, j] += value
+        
+                
+        
+    print(np.max(heat_map))
     
     heat_map = heat_map - np.min(heat_map)
 
