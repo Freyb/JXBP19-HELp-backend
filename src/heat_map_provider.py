@@ -42,8 +42,8 @@ def do_the_job(message_data):
     min_lon= 24.489979
     max_lon= 25.202071
     
-    lats = np.arange(min_lat, max_lat, .001)
-    lons = np.arange(min_lon, max_lon, .002)
+    lats = np.arange(min_lat, max_lat, .003)
+    lons = np.arange(min_lon, max_lon, .006)
     
     def calculate_relevance_place_in_distance(dist):
         return exp(-(dist**2)/(2*(0.02)))/2.50662827
